@@ -2,6 +2,8 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get('/', (req, res) => 'Welcome to the Employees CRUD API')
+
 Route.group(() => {
   Route.get('/employees', 'EmployeeController.index')
   Route.post('/employees', 'EmployeeController.store')
