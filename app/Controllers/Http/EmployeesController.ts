@@ -5,7 +5,7 @@ export default class EmployeesController {
   public async index({ response }: HttpContextContract) {
     const employees = await Employee.query()
       .select(['employees.id', 'name', 'email', 'address', 'phone', 'role', 'role_id'])
-      .innerJoin('roles', 'employees.role_id', 'roles.id')
+      .join('roles', 'employees.role_id', '=', 'roles.id')
 
     if (employees) {
       return response.json(employees)

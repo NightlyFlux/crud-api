@@ -18,6 +18,9 @@ export default class Employee extends BaseModel {
   public phone: bigint
 
   @column()
+  public role: string
+
+  @column()
   public role_id: number
 
   @column.dateTime({ autoCreate: true })
